@@ -10,16 +10,27 @@
                                                                            echo bsnf_the_title_decoration();
                                                                            the_title(); ?></p></a></h2>
 
-        <a class="index-page-post" href="<?php the_permalink(); ?>">
-            <?php
-            // INSERT FEATURED IMAGE (IF THERE IS ONE)
-            if (has_post_thumbnail()) : ?>
-                <?php the_post_thumbnail(); ?>
-            <?php endif; ?>
-        </a>
+        <?php
+        // INSERT FEATURED IMAGE (IF THERE IS ONE)
+        if (has_post_thumbnail()) : ?>
+            <table>
+                <tr>
+                    <td>
+                        <a class="index-page-post" href="<?php the_permalink(); ?>">
+                            <?php the_post_thumbnail(); ?>
+                        </a>
+                    </td>
+                    <td>
+                        <?php the_content() ?>
+                    </td>
+                </tr>
+            </table>
+        <?php else : ?>
 
-        <p><?php the_content() ?></p>
-        
+            <p><?php the_content() ?></p>
+
+        <?php endif; ?>
+
     </article>
 
 <?php elseif (is_front_page()) : ?>

@@ -35,6 +35,14 @@ html {
     /* box-sizing: border-box; /\* fixes quirky box-sizing behaviour *\/ */
 }
 
+tr {
+    vertical-align: top;
+}
+
+td {
+    padding-right: 2em;
+}
+
 /*------------------------ HEADER/MENU BAR -------------------------*/
 
 header {
@@ -135,6 +143,10 @@ article.category-award {
 span.award-title-decoration {
     color: cyan;
 }
+
+/* img.attachment-post-thumbnail { */
+/*     float: left */
+/* } */
 
 /* article.category-award a:link { */
 /*     color: red; */
