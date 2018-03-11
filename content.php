@@ -11,10 +11,10 @@
                 <?php the_post_thumbnail(); ?>
             <?php endif; ?>
         </a>
-        
+
         <p><?php the_excerpt() ?></p>
     </article>
-    
+
 <?php elseif (is_front_page()) : ?>
     <!-- --------------------------- FRONT PAGE --------------------------- -->
     <p><h1>FRONT PAGE</h1></p>
@@ -28,12 +28,12 @@
         <br/>
         <span class="single-post-pagination-link"><?php previous_post_link($format = '%link', $link = 'EARLIER: %title'); ?>&nbsp;</span>
     </div> <!-- single-post-pagination -->
-    
+
     <article id="post-<?php the_ID(); ?>" <?php post_class('single_page_post'); ?>>
         <!-- <p>DATE: <?php the_time('F jS, Y'); ?></p> -->
         <h2><p><?php the_title(); ?></p></h2>
         <?php the_content();
-        
+
 	// If comments are open or we have at least one comment, load up the comment template.
 	if ( comments_open() || get_comments_number() ) :
 	comments_template();
@@ -51,7 +51,14 @@
     <!-- <p><h1>PAGE (NOT POST)</h1></p> -->
     <article id="page-<?php the_ID(); ?>">
         <h2><p><?php the_title(); ?></p></h2>
-        <?php the_content(); ?>
+        <?php the_content();
+
+        // If comments are open or we have at least one comment, load up the comment template.
+        if ( comments_open() || get_comments_number() ) :
+        comments_template();
+        endif;
+        ?>
+
     </article>
 
 <?php elseif (is_archive()) : ?>

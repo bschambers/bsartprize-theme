@@ -117,26 +117,27 @@ article a:hover {
 /* } */
 
 article.category-award {
+    border: 5px yellow solid;
     /* border-bottom: 1px red solid; */
     /* border-color: blue; */
-    color: red;
+    /* color: red; */
     /* display: block; */
     /* margin: 1em; */
     /* padding-left: 1em; */
     /* padding-right: 1em; */
 }
 
-article.category-award a:link {
-    color: red;
-}
+/* article.category-award a:link { */
+/*     color: red; */
+/* } */
 
-article.category-award a:visited {
-    color: #d00;
-}
+/* article.category-award a:visited { */
+/*     color: #d00; */
+/* } */
 
-article.category-award a:hover {
-    color: #f44;
-}
+/* article.category-award a:hover { */
+/*     color: #f44; */
+/* } */
 
 /* article.home_page_post::after { */
 /*     content: "<hr/>"; */
