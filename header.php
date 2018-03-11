@@ -18,7 +18,7 @@
 
     <body>
 
-        <header id="masthead" class="site-header" role="banner">
+        <header id="masthead" class="site-header clearfix" role="banner">
             <!-- <p><b>INSERTED BY HEADER.PHP</b></p> -->
 
             <h1 class="site-title">

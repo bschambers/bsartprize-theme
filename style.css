@@ -52,8 +52,8 @@ time {
 }
 
 body {
-    padding-left: 10em;
-    padding-right: 10em;
+    padding-left: 16%;
+    padding-right: 16%;
 }
 
 /*------------------------ HEADER/MENU BAR -------------------------*/
@@ -93,6 +93,7 @@ header li.page_item {
 
 span#nav-menu-search-form {
     float: right;
+     margin-top: 1em;
 }
 
 /* insert vertical bar before each static page link */
@@ -100,13 +101,13 @@ header.site-header li.page_item::before {
     content: " | ";
 }
 
+.clearfix {
+    overflow: auto;
+}
+
 /*---------------------------- CONTENT -----------------------------*/
 
 article {
-    /* border-bottom: 1px #222 solid; */
-    /* border-color: blue; */
-    /* color: black; */
-    /* display: block; */
     margin: 1em;
     padding-left: 1em;
     padding-right: 1em;
@@ -115,18 +116,10 @@ article {
 /* home page post summary */
 article.home_page_post {
     margin-top: 3em;
-    /* border-bottom: 1px #222 solid; */
-    /* border-color: blue; */
-    /* color: black; */
-    /* display: block; */
-    /* margin: 1em; */
-    /* padding-left: 1em; */
-    /* padding-right: 1em; */
 }
 
 article.home_page_post h2 {
     margin-top: 0;
-    /* padding-top: 0; */
 }
 
 article a:link {
@@ -157,6 +150,11 @@ span.award-title-decoration {
     color: #DD0;
 }
 
+img.attachment-post-thumbnail {
+    float: left;
+    margin-right: 2em;
+}
+
 
 
 /*----------------------------- FOOTER -----------------------------*/
@@ -183,4 +181,38 @@ footer a:visited {
 footer a:hover {
     text-decoration: none; /* remove underline from links */
     color: #666;
+}
+
+
+
+/*---------------- MEDIA RULES (for narrow display) ----------------*/
+
+/*
+ * Fairly narrow screen:
+ *
+ * - get rid of horizontal padding on body
+ */
+@media screen and (max-width: 1200px) {
+    
+    body {
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+}
+
+/*
+ * Very narrow screen:
+ *
+ * - restructure title bar
+ * - place text below featured image on home page
+ */
+@media screen and (max-width: 800px) {
+
+    span#nav-menu-search-form {
+        float: none;
+    }
+
+    img.attachment-post-thumbnail {
+        float: none;
+    }
 }

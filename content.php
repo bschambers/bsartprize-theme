@@ -1,36 +1,27 @@
 
 <?php if (is_home()) :?>
     <!-- --------------------------- HOME PAGE ---------------------------- -->
-    <article id="post-<?php the_ID(); ?>" <?php post_class('home_page_post'); ?>>
-        <p>
-            <?php bsap_date() ?>
-            <a class="index-page-post" href="<?php the_permalink(); ?>">
-                <?php bsap_decorated_title() ?>
-            </a>
-        </p>
+    <div class="home-page-post clearfix">
+        <article id="post-<?php the_ID(); ?>" <?php post_class('home_page_post'); ?>>
+            <p>
+                <?php bsap_date() ?>
+                <a class="index-page-post" href="<?php the_permalink(); ?>">
+                    <?php bsap_decorated_title() ?>
+                </a>
+            </p>
 
-        <?php
-        // INSERT FEATURED IMAGE (IF THERE IS ONE)
-        if (has_post_thumbnail()) : ?>
-            <table>
-                <tr>
-                    <td>
-                        <a class="index-page-post" href="<?php the_permalink(); ?>">
-                            <?php the_post_thumbnail(); ?>
-                        </a>
-                    </td>
-                    <td>
-                        <?php the_content() ?>
-                    </td>
-                </tr>
-            </table>
-        <?php else : ?>
-
+            <?php
+            // Insert featured image (if there is one)
+            if (has_post_thumbnail()) : ?>
+                <a class="index-page-post" href="<?php the_permalink(); ?>">
+                    <?php the_post_thumbnail(); ?>
+                </a>
+            <?php endif; ?>
+            
             <p><?php the_content() ?></p>
 
-        <?php endif; ?>
-
-    </article>
+        </article>
+    </div>
 
 <?php elseif (is_front_page()) : ?>
     <!-- --------------------------- FRONT PAGE --------------------------- -->
