@@ -10,3 +10,160 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: minimal
 Text Domain: bsnewsfeed
 */
+
+/*-------------------------- CUSTOM FONT ---------------------------*/
+/*--------------------- @font-face since CSS3 ----------------------*/
+
+@font-face {
+    font-family: urw-gothic;
+    src: url('fonts/urw-gothic-l-book.ttf');
+    font-weight: normal;
+}
+
+/*------------------------------------------------------------------*/
+
+/* GENERAL MISC */
+
+html {
+    color: #333;
+    /* font-family: arial, sans-serif; */
+    font-family: "urw-gothic", arial, sans-serif;
+    /* font-size: 100%; */
+    /* background: #779999; */
+    /* -webkit-box-sizing: border-box; /\* for old browser support *\/ */
+    /* -moz-box-sizing: border-box; /\* for old browser support *\/ */
+    /* box-sizing: border-box; /\* fixes quirky box-sizing behaviour *\/ */
+}
+
+/*------------------------ HEADER/MENU BAR -------------------------*/
+
+header {
+    border: 1px solid #333;
+    margin: 1em;
+    padding: 1em;
+    /* padding-left: 1em; */
+    /* padding-right: 1em; */
+    /* padding-bottom: 1em; */
+}
+
+header a:link {
+    text-decoration: none; /* remove underline from links */
+    color: #333;
+}
+
+header a:visited {
+    text-decoration: none; /* remove underline from links */
+    color: black;
+}
+
+header a:hover {
+    text-decoration: none; /* remove underline from links */
+    color: #666;
+}
+
+header h1.site-title {
+    display: inline;
+    size: 2rem;
+}
+
+header li.page_item {
+    display: inline;
+}
+
+/*---------------------------- CONTENT -----------------------------*/
+
+/* home page post summary */
+article {
+    /* border-bottom: 1px #222 solid; */
+    /* border-color: blue; */
+    /* color: black; */
+    /* display: block; */
+    margin: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/* home page post summary */
+article.home_page_post {
+    border-bottom: 1px #222 solid;
+    /* border-color: blue; */
+    /* color: black; */
+    /* display: block; */
+    /* margin: 1em; */
+    /* padding-left: 1em; */
+    /* padding-right: 1em; */
+}
+
+article a:link {
+    color: #333;
+}
+
+article a:visited {
+    color: black;
+}
+
+article a:hover {
+    color: #666;
+}
+
+/* article.category-news { */
+/*     border: 1px red solid; */
+/*     /\* border-color: blue; *\/ */
+/*     color: red; */
+/*     /\* display: block; *\/ */
+/*     /\* margin: 1em; *\/ */
+/*     /\* padding-left: 1em; *\/ */
+/*     /\* padding-right: 1em; *\/ */
+/* } */
+
+article.category-award {
+    /* border-bottom: 1px red solid; */
+    /* border-color: blue; */
+    color: red;
+    /* display: block; */
+    /* margin: 1em; */
+    /* padding-left: 1em; */
+    /* padding-right: 1em; */
+}
+
+article.category-award a:link {
+    color: red;
+}
+
+article.category-award a:visited {
+    color: #d00;
+}
+
+article.category-award a:hover {
+    color: #f44;
+}
+
+/* article.home_page_post::after { */
+/*     content: "<hr/>"; */
+/* } */
+
+/*----------------------------- FOOTER -----------------------------*/
+
+footer {
+    /* border: 1px solid #333; */
+    margin: 1em;
+    padding: 1em;
+    /* padding-left: 1em; */
+    /* padding-right: 1em; */
+    /* padding-bottom: 1em; */
+}
+
+footer a:link {
+    text-decoration: none; /* remove underline from links */
+    color: #333;
+}
+
+footer a:visited {
+    text-decoration: none; /* remove underline from links */
+    color: black;
+}
+
+footer a:hover {
+    text-decoration: none; /* remove underline from links */
+    color: #666;
+}

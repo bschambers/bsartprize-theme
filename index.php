@@ -22,7 +22,7 @@ get_header();
 <div id="primary" class="content-area">
   <main id="main" class="site-main" role="main_BS_CRAP_POT">
 
-    <h1><p>NUM POSTS: <?php echo wp_count_posts()->publish; ?></p></h1>
+      <!-- <h1><p>NUM POSTS: <?php echo wp_count_posts()->publish; ?></p></h1> -->
 
     <?php
     if (have_posts()) :
@@ -42,7 +42,7 @@ get_header();
          * called content-___.php (where ___ is the Post Format name) and that will be used instead.
          */
         get_template_part('content', get_post_format());
-  
+    
       endwhile;
   
       // Previous/next page navigation.
