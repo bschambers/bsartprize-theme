@@ -24,6 +24,7 @@ if (function_exists('add_theme_support')) {
 }
 
 
+
 /*-------------------- CUSTOM DASHBOARD WIDGETS --------------------*/
 
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
@@ -45,6 +46,23 @@ function custom_dashboard_help() {
 <li>Use the insert-read-more-tag option in the WYSIWYG editor, (Ctrl + Alt + T).</li>
 
 </ul>';
+}
+
+
+
+/* -------------- CUSTOM DECORATION FOR 'AWARD' POSTS --------------- */
+
+function bsnf_the_title_decoration() {
+    $category_object = get_the_category();
+    $category_name = $category_object[0]->name;
+    /* return $category_name;
+     * if (strcasecmp($category_name, "news")) {
+     *     return "NEWS: ";*/
+    if (strcasecmp($category_name, "award") == 0) {
+        return "<span class=award-title-decoration>AWARD: </span>";
+    } else {
+        return "";
+    }
 }
 
 ?>

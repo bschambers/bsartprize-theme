@@ -38,7 +38,7 @@ html {
 /*------------------------ HEADER/MENU BAR -------------------------*/
 
 header {
-    border: 1px solid #333;
+    border-bottom: 1px solid #333;
     margin: 1em;
     padding: 1em;
     /* padding-left: 1em; */
@@ -85,7 +85,8 @@ article {
 
 /* home page post summary */
 article.home_page_post {
-    border-bottom: 1px #222 solid;
+    margin-top: 3em;
+    /* border-bottom: 1px #222 solid; */
     /* border-color: blue; */
     /* color: black; */
     /* display: block; */
@@ -117,7 +118,7 @@ article a:hover {
 /* } */
 
 article.category-award {
-    border: 5px yellow solid;
+    /* border: 5px yellow solid; */
     /* border-bottom: 1px red solid; */
     /* border-color: blue; */
     /* color: red; */
@@ -125,6 +126,10 @@ article.category-award {
     /* margin: 1em; */
     /* padding-left: 1em; */
     /* padding-right: 1em; */
+}
+
+span.award-title-decoration {
+    color: cyan;
 }
 
 /* article.category-award a:link { */
@@ -146,7 +151,7 @@ article.category-award {
 /*----------------------------- FOOTER -----------------------------*/
 
 footer {
-    /* border: 1px solid #333; */
+    border-top: 1px solid #333;
     margin: 1em;
     padding: 1em;
     /* padding-left: 1em; */

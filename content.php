@@ -1,8 +1,14 @@
 
-<?php if (is_home()) : ?>
+<?php if (is_home()) :?>
     <!-- --------------------------- HOME PAGE ---------------------------- -->
     <article id="post-<?php the_ID(); ?>" <?php post_class('home_page_post'); ?>>
-        <h2><a class="index-page-post" href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a></h2>
+        <!-- <?php
+             $category_object = get_the_category();
+             $category_name = $category_object[0]->name;
+             ?>         -->
+        <h2><a class="index-page-post" href="<?php the_permalink(); ?>"><p><?php
+                                                                           echo bsnf_the_title_decoration();
+                                                                           the_title(); ?></p></a></h2>
 
         <a class="index-page-post" href="<?php the_permalink(); ?>">
             <?php
