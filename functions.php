@@ -45,7 +45,15 @@ function custom_dashboard_help() {
 
     <li>Use the insert-read-more-tag option in the WYSIWYG editor, (Ctrl + Alt + T).</li>
 
-</ul>';
+</ul>
+
+<p><strong>AUTOMATIC DECORATION OF AWARD-POST TITLE:</strong></p>
+<ul style="list-style-type: disc;">
+    <li>Make sure to set the post category to "award".</li>
+    <li>If post title contains the text "award:", all the text in the title up to and including this will be wrapped in a span element with the class award-title-decoration.</li>
+</ul>
+
+';
 }
 
 
@@ -53,23 +61,29 @@ function custom_dashboard_help() {
 /*--------------- OTHER FUNCTIONS ----------------*/
 
 /*
-For use within the loop only.
-*/
-function bsnf_title_decoration() {
+ * Use within the loop only.
+ */
+function bsap_decorated_title() {
     $category_object = get_the_category();
     $category_name = $category_object[0]->name;
     if (strcasecmp($category_name, "award") == 0) {
-        return "<span class=award-title-decoration>AWARD: </span>";
+        $keyword = "award:";
+        $title = get_the_title();
+        $pos = strpos(strtolower($title), $keyword, 0);
+        $splitpt = $pos + strlen($keyword);
+        $part1 = substr($title, 0, $splitpt);
+        $part2 = substr($title, $splitpt, strlen($title));
+        echo "<p><h2><span class=award-title-decoration>" . $part1 . "</span>" . $part2 . "</h2></p>";
     } else {
-        return "";
+        echo "<p><h2>" . get_the_title() . "</h2></p>";
     }
 }
 
 /*
-For use within the loop only.
-*/
-function bsnf_date() {
-    return "<time>" . get_the_time('F jS, Y') . "</time>";
+ * Use within the loop only.
+ */
+function bsap_date() {
+    echo "<time>" . get_the_time('F jS, Y') . "</time>";
 }
 
 ?>

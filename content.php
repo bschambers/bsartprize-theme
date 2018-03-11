@@ -3,12 +3,9 @@
     <!-- --------------------------- HOME PAGE ---------------------------- -->
     <article id="post-<?php the_ID(); ?>" <?php post_class('home_page_post'); ?>>
         <p>
-            <?php echo bsnf_date() ?>
+            <?php bsap_date() ?>
             <a class="index-page-post" href="<?php the_permalink(); ?>">
-                <h2>
-                    <?php echo bsnf_title_decoration();
-                    the_title(); ?>
-                </h2>
+                <?php bsap_decorated_title() ?>
             </a>
         </p>
 
@@ -50,8 +47,8 @@
     </div> <!-- single-post-pagination -->
 
     <article id="post-<?php the_ID(); ?>" <?php post_class('single_page_post'); ?>>
-        <?php echo bsnf_date() ?>
-        <h2><p><?php the_title(); ?></p></h2>
+        <?php bsap_date() ?>
+        <?php bsap_decorated_title() ?>
         <?php the_content();
 
 	// If comments are open or we have at least one comment, load up the comment template.
