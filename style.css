@@ -45,7 +45,7 @@ td {
 
 time {
     color: teal;
-    font-size: 75%;
+    font-size: 80%;
     font-weight: bold;
 }
 
@@ -90,7 +90,6 @@ span#nav-menu-search-form {
 
 /*---------------------------- CONTENT -----------------------------*/
 
-/* home page post summary */
 article {
     /* border-bottom: 1px #222 solid; */
     /* border-color: blue; */
@@ -113,6 +112,11 @@ article.home_page_post {
     /* padding-right: 1em; */
 }
 
+article.home_page_post h2 {
+    margin-top: 0;
+    /* padding-top: 0; */
+}
+
 article a:link {
     color: #333;
 }
@@ -125,50 +129,23 @@ article a:hover {
     color: #666;
 }
 
-/* article.category-news { */
-/*     border: 1px red solid; */
-/*     /\* border-color: blue; *\/ */
-/*     color: red; */
-/*     /\* display: block; *\/ */
-/*     /\* margin: 1em; *\/ */
-/*     /\* padding-left: 1em; *\/ */
-/*     /\* padding-right: 1em; *\/ */
-/* } */
+a.more-link:link {
+    color: red;
+}
 
-article.category-award {
-    /* border: 5px yellow solid; */
-    /* border-bottom: 1px red solid; */
-    /* border-color: blue; */
-    /* color: red; */
-    /* display: block; */
-    /* margin: 1em; */
-    /* padding-left: 1em; */
-    /* padding-right: 1em; */
+a.more-link:visited {
+    color: #B00;
+}
+
+a.more-link:hover {
+    color: #F44;
 }
 
 span.award-title-decoration {
-    color: cyan;
+    color: #DD0;
 }
 
-/* img.attachment-post-thumbnail { */
-/*     float: left */
-/* } */
 
-/* article.category-award a:link { */
-/*     color: red; */
-/* } */
-
-/* article.category-award a:visited { */
-/*     color: #d00; */
-/* } */
-
-/* article.category-award a:hover { */
-/*     color: #f44; */
-/* } */
-
-/* article.home_page_post::after { */
-/*     content: "<hr/>"; */
-/* } */
 
 /*----------------------------- FOOTER -----------------------------*/
 
