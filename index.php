@@ -1,7 +1,7 @@
 <?php
 
 /*
-   THEME: bsnewsfeed
+   THEME: bsartprize
 
    SEE: functions.php --> custom_dashboard_help() for usage guidelines
 

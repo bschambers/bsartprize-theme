@@ -1,14 +1,16 @@
 /*
-Theme Name: bsnewsfeed
+Theme Name: bsartprize
 Theme URI:
-Author: Ben Chambers
+Author: B. S. Chambers
 Author URI: http://bschambers.info
-Description: A fairly clean and simple news feed theme. Home page shows a list of post summaries which link to the posts.
+Description: A fairly clean and simple news feed theme with a few special features.
+Home page shows a list of post summaries which link to the posts.
+Special styling applied to posts with the "award" category.
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: minimal
-Text Domain: bsnewsfeed
+Text Domain: bsartprize
 */
 
 /*-------------------------- CUSTOM FONT ---------------------------*/

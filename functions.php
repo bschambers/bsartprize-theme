@@ -2,11 +2,11 @@
 
 /*------------------- ADD STYLESHEET TO WEBSITE --------------------*/
 
-function enqueue_style_bsnewsfeed() {
-    wp_enqueue_style('bsnewsfeed-style', get_stylesheet_uri());
+function enqueue_style_bsartprize() {
+    wp_enqueue_style('bsartprize-style', get_stylesheet_uri());
 }
 
-add_action('wp_enqueue_scripts', 'enqueue_style_bsnewsfeed');
+add_action('wp_enqueue_scripts', 'enqueue_style_bsartprize');
 
 
 
@@ -34,7 +34,7 @@ function my_custom_dashboard_widgets() {
     // Globalize the metaboxes array, this holds all the widgets for wp-admin
     global $wp_meta_boxes;
 
-    wp_add_dashboard_widget('custom_help_widget', 'bsnewsfeed theme support', 'custom_dashboard_help');
+    wp_add_dashboard_widget('custom_help_widget', 'bsartprize theme support', 'custom_dashboard_help');
 }
 
 function custom_dashboard_help() {
