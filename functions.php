@@ -43,26 +43,33 @@ function custom_dashboard_help() {
 <p><strong>POST EXCERPTS FOR HOME PAGE:</strong></p>
 <ul style="list-style-type: disc;">
 
-<li>Use the insert-read-more-tag option in the WYSIWYG editor, (Ctrl + Alt + T).</li>
+    <li>Use the insert-read-more-tag option in the WYSIWYG editor, (Ctrl + Alt + T).</li>
 
 </ul>';
 }
 
 
 
-/* -------------- CUSTOM DECORATION FOR 'AWARD' POSTS --------------- */
+/*--------------- OTHER FUNCTIONS ----------------*/
 
-function bsnf_the_title_decoration() {
+/*
+For use within the loop only.
+*/
+function bsnf_title_decoration() {
     $category_object = get_the_category();
     $category_name = $category_object[0]->name;
-    /* return $category_name;
-     * if (strcasecmp($category_name, "news")) {
-     *     return "NEWS: ";*/
     if (strcasecmp($category_name, "award") == 0) {
         return "<span class=award-title-decoration>AWARD: </span>";
     } else {
         return "";
     }
+}
+
+/*
+For use within the loop only.
+*/
+function bsnf_date() {
+    return "<time>" . get_the_time('F jS, Y') . "</time>";
 }
 
 ?>

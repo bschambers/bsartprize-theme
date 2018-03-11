@@ -43,6 +43,12 @@ td {
     padding-right: 2em;
 }
 
+time {
+    color: teal;
+    font-size: 75%;
+    font-weight: bold;
+}
+
 /*------------------------ HEADER/MENU BAR -------------------------*/
 
 header {

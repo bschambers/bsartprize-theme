@@ -2,13 +2,15 @@
 <?php if (is_home()) :?>
     <!-- --------------------------- HOME PAGE ---------------------------- -->
     <article id="post-<?php the_ID(); ?>" <?php post_class('home_page_post'); ?>>
-        <!-- <?php
-             $category_object = get_the_category();
-             $category_name = $category_object[0]->name;
-             ?>         -->
-        <h2><a class="index-page-post" href="<?php the_permalink(); ?>"><p><?php
-                                                                           echo bsnf_the_title_decoration();
-                                                                           the_title(); ?></p></a></h2>
+        <p>
+            <?php echo bsnf_date() ?>
+            <a class="index-page-post" href="<?php the_permalink(); ?>">
+                <h2>
+                    <?php echo bsnf_title_decoration();
+                    the_title(); ?>
+                </h2>
+            </a>
+        </p>
 
         <?php
         // INSERT FEATURED IMAGE (IF THERE IS ONE)
@@ -48,7 +50,7 @@
     </div> <!-- single-post-pagination -->
 
     <article id="post-<?php the_ID(); ?>" <?php post_class('single_page_post'); ?>>
-        <!-- <p>DATE: <?php the_time('F jS, Y'); ?></p> -->
+        <?php echo bsnf_date() ?>
         <h2><p><?php the_title(); ?></p></h2>
         <?php the_content();
 
