@@ -70,6 +70,10 @@ header li.page_item {
     display: inline;
 }
 
+span#nav-menu-search-form {
+    float: right;
+}
+
 /*---------------------------- CONTENT -----------------------------*/
 
 /* home page post summary */

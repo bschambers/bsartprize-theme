@@ -36,6 +36,16 @@
             'title_li' => '',
             'sort_column' => 'post_date')); ?>
 
+        
+        <!--
+             SEARCH BOX:
+        -->
+        <?php
+            echo '<span id="nav-menu-search-form">';
+            get_search_form(true);
+            echo '</span>';
+        ?>
+
     </header>
     
     <body>
