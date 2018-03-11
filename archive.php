@@ -14,6 +14,10 @@
 
 get_header();
 
+bsap_decorated_title();
+
 wp_get_archives('type=postbypost');
 
-get_footer();?>
+get_footer();
+
+?>

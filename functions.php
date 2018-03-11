@@ -42,9 +42,7 @@ function custom_dashboard_help() {
     echo '
 <p><strong>POST EXCERPTS FOR HOME PAGE:</strong></p>
 <ul style="list-style-type: disc;">
-
     <li>Use the insert-read-more-tag option in the WYSIWYG editor, (Ctrl + Alt + T).</li>
-
 </ul>
 
 <p><strong>AUTOMATIC DECORATION OF AWARD-POST TITLE:</strong></p>
@@ -53,7 +51,13 @@ function custom_dashboard_help() {
     <li>If post title contains the text "award:", all the text in the title up to and including this will be wrapped in a span element with the class award-title-decoration.</li>
 </ul>
 
-';
+<p><strong>ADD AN ARCHIVE PAGE:</strong></p>
+<ul style="list-style-type: disc;">
+    <li>Create a new blank page and title it "Archive".</li>
+    <li>In Page-Attributes set the template to Archive.</li>
+    <li>Leave the page blank, and save.</li>
+</ul>
+    ';
 }
 
 
@@ -64,19 +68,20 @@ function custom_dashboard_help() {
  * Use within the loop only.
  */
 function bsap_decorated_title() {
+    $title = get_the_title();
     $category_object = get_the_category();
-    $category_name = $category_object[0]->name;
-    if (strcasecmp($category_name, "award") == 0) {
-        $keyword = "award:";
-        $title = get_the_title();
-        $pos = strpos(strtolower($title), $keyword, 0);
-        $splitpt = $pos + strlen($keyword);
-        $part1 = substr($title, 0, $splitpt);
-        $part2 = substr($title, $splitpt, strlen($title));
-        echo "<p><h2><span class=award-title-decoration>" . $part1 . "</span>" . $part2 . "</h2></p>";
-    } else {
-        echo "<p><h2>" . get_the_title() . "</h2></p>";
+    if ($category_object) {
+        $category_name = $category_object[0]->name;
+        if (strcasecmp($category_name, "award") == 0) {
+            $keyword = "award:";
+            $pos = strpos(strtolower($title), $keyword, 0);
+            $splitpt = $pos + strlen($keyword);
+            $part1 = substr($title, 0, $splitpt);
+            $part2 = substr($title, $splitpt, strlen($title));
+            $title = "<span class=award-title-decoration>" . $part1 . "</span>" . $part2;
+        }
     }
+    echo "<p><h2>" . $title . "</h2></p>";
 }
 
 /*

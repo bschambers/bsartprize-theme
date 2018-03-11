@@ -95,6 +95,11 @@ span#nav-menu-search-form {
     float: right;
 }
 
+/* insert vertical bar before each static page link */
+header.site-header li.page_item::before {
+    content: " | ";
+}
+
 /*---------------------------- CONTENT -----------------------------*/
 
 article {
