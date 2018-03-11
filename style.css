@@ -51,6 +51,11 @@ time {
     font-weight: bold;
 }
 
+body {
+    padding-left: 10em;
+    padding-right: 10em;
+}
+
 /*------------------------ HEADER/MENU BAR -------------------------*/
 
 header {
