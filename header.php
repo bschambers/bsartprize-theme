@@ -41,9 +41,9 @@
              SEARCH BOX:
         -->
         <?php
-            echo '<span id="nav-menu-search-form">';
+        echo '<span id="nav-menu-search-form">';
             get_search_form(true);
-            echo '</span>';
+        echo '</span>';
         ?>
 
     </header>
