@@ -12,7 +12,8 @@
             <?php endif; ?>
         </a>
 
-        <p><?php the_excerpt() ?></p>
+        <p><?php the_content() ?></p>
+        
     </article>
 
 <?php elseif (is_front_page()) : ?>
@@ -35,7 +36,7 @@
         <?php the_content();
 
 	// If comments are open or we have at least one comment, load up the comment template.
-	if ( comments_open() || get_comments_number() ) :
+	if (comments_open() || get_comments_number()) :
 	comments_template();
 	endif;
         ?>
@@ -44,7 +45,8 @@
 
 <?php elseif (is_search()) : ?>
     <!-- -------------------------- SEARCH PAGE --------------------------- -->
-    <p><h1>SEARCH PAGE</h1></p>
+    <p><h1>SEARCH RESULTS:</h1></p>
+    <p><?php the_excerpt() ?></p>
 
 <?php elseif (is_page()) : ?>
     <!-- ------------------------ PAGE (NOT POST) ------------------------- -->
@@ -54,7 +56,7 @@
         <?php the_content();
 
         // If comments are open or we have at least one comment, load up the comment template.
-        if ( comments_open() || get_comments_number() ) :
+        if (comments_open() || get_comments_number()) :
         comments_template();
         endif;
         ?>
