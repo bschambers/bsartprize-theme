@@ -14,6 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- fires the wp_head action  -->
         <?php wp_head(); ?>
+        <title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
     </head>
 
     <body>
