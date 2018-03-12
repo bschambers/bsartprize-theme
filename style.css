@@ -192,24 +192,25 @@ footer {
     border-top: 1px solid #333;
     margin: 1em;
     padding: 1em;
-    /* padding-left: 1em; */
-    /* padding-right: 1em; */
-    /* padding-bottom: 1em; */
 }
 
 footer a:link {
     text-decoration: none; /* remove underline from links */
-    color: #333;
+    color: #00F;
 }
 
 footer a:visited {
     text-decoration: none; /* remove underline from links */
-    color: black;
+    color: #60D;
 }
 
 footer a:hover {
     text-decoration: none; /* remove underline from links */
-    color: #666;
+    color: #66F;
+}
+
+footer span.footer-item {
+    display: inline-block;
 }
 
 
