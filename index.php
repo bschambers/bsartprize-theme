@@ -50,7 +50,7 @@ get_header();
 
     else:
     ?>
-    <h1>NO POSTS FOUND!</h1>
+    <h1>No posts found!</h1>
     <?php endif; ?>
 
   </main><!-- .site-main -->

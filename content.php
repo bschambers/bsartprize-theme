@@ -17,7 +17,7 @@
                     <?php the_post_thumbnail(); ?>
                 </a>
             <?php endif; ?>
-            
+
             <p><?php the_content() ?></p>
 
         </article>
@@ -52,14 +52,19 @@
 
 <?php elseif (is_search()) : ?>
     <!-- -------------------------- SEARCH PAGE --------------------------- -->
-    <p><h1>SEARCH RESULTS:</h1></p>
-    <p><?php the_excerpt() ?></p>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('search_page_post'); ?>>
+        <?php bsap_date() ?>
+        <a class="index-page-post" href="<?php the_permalink(); ?>">
+            <?php bsap_decorated_title() ?>
+        </a>
+        <?php the_excerpt() ?>
+    </article>
 
 <?php elseif (is_page()) : ?>
     <!-- ------------------------ PAGE (NOT POST) ------------------------- -->
     <!-- <p><h1>PAGE (NOT POST)</h1></p> -->
     <article id="page-<?php the_ID(); ?>">
-        <h2><p><?php the_title(); ?></p></h2>
+        <?php bsap_decorated_title() ?>
         <?php the_content();
 
         // If comments are open or we have at least one comment, load up the comment template.
