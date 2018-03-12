@@ -1,8 +1,8 @@
 
-<?php if (is_home()) :?>
+<?php if (is_home() || is_archive()) :?>
     <!-- --------------------------- HOME PAGE ---------------------------- -->
     <div class="home-page-post clearfix">
-        <article id="post-<?php the_ID(); ?>" <?php post_class('home_page_post'); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('home-page-post'); ?>>
             <p>
                 <?php bsap_date() ?>
                 <a class="index-page-post" href="<?php the_permalink(); ?>">
@@ -40,8 +40,10 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class('single_page_post'); ?>>
         <?php bsap_date() ?>
         <?php bsap_decorated_title() ?>
-        <?php the_content();
+        <?php the_content() ?>
+        <p class="tags-list"><b><?php the_tags() ?></b></p>
 
+        <?php
 	// If comments are open or we have at least one comment, load up the comment template.
 	if (comments_open() || get_comments_number()) :
 	comments_template();
@@ -52,13 +54,27 @@
 
 <?php elseif (is_search()) : ?>
     <!-- -------------------------- SEARCH PAGE --------------------------- -->
-    <article id="post-<?php the_ID(); ?>" <?php post_class('search_page_post'); ?>>
-        <?php bsap_date() ?>
-        <a class="index-page-post" href="<?php the_permalink(); ?>">
-            <?php bsap_decorated_title() ?>
-        </a>
-        <?php the_excerpt() ?>
-    </article>
+    <div class="search-page-post clearfix">
+        <article id="post-<?php the_ID(); ?>" <?php post_class('search-page-post'); ?>>
+            <p>
+                <?php bsap_date() ?>
+                <a class="index-page-post" href="<?php the_permalink(); ?>">
+                    <?php bsap_decorated_title() ?>
+                </a>
+            </p>
+
+            <?php
+            // Insert featured image (if there is one)
+            if (has_post_thumbnail()) : ?>
+                <a class="index-page-post" href="<?php the_permalink(); ?>">
+                    <?php the_post_thumbnail(); ?>
+                </a>
+            <?php endif; ?>
+
+            <p><?php the_excerpt() ?></p>
+
+        </article>
+    </div>
 
 <?php elseif (is_page()) : ?>
     <!-- ------------------------ PAGE (NOT POST) ------------------------- -->
@@ -74,9 +90,5 @@
         ?>
 
     </article>
-
-<?php elseif (is_archive()) : ?>
-    <!-- -------------------------- ARCHIVE PAGE -------------------------- -->
-    <p><h1>ARCHIVE PAGE</h1></p>
 
 <?php endif; ?>

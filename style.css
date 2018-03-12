@@ -114,11 +114,11 @@ article {
 }
 
 /* home page post summary */
-article.home_page_post {
+article.home-page-post {
     margin-top: 3em;
 }
 
-article.home_page_post h2 {
+article.home-page-post h2 {
     margin-top: 0;
 }
 
@@ -153,6 +153,22 @@ span.award-title-decoration {
 img.attachment-post-thumbnail {
     float: left;
     margin-right: 2em;
+}
+
+
+
+/*------------------------------ TAGS ------------------------------*/
+
+.tags-list a:link {
+    color: #0D0;
+}
+
+.tags-list a:hover {
+    color: #6D6;
+}
+
+.tags-list a:visited {
+    color: #0A0;
 }
 
 
