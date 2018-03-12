@@ -54,22 +54,19 @@ if ( post_password_required() ) {
 
 	<ol class="comment-list">
 	    <?php
-	    wp_list_comments( array(
+	    wp_list_comments(array(
 		'avatar_size' => 100,
 		'style'       => 'ol',
 		'short_ping'  => true,
 		'reply_text'  => 'reply',
-                /* twentyseventeen_get_svg( array( 'icon' => 'mail-reply' ) ) . __( 'Reply', 'twentyseventeen' ),*/
-	    ) );
+            ));
 	    ?>
 	</ol>
 
-    <?php the_comments_pagination( array(
+    <?php the_comments_pagination(array(
 	'prev_text' => "prev",
-        /* twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous', 'twentyseventeen' ) . '</span>',*/
 	'next_text' => 'next',
-        /* '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),*/
-    ) );
+    ));
 
     endif; // Check for have_comments().
 

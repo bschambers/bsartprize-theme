@@ -6,7 +6,7 @@ get_header();
 the_archive_title('<h1 class="page-title">', '</h1>');
 ?>
 
-<p>
+<p class="tag-cloud">
     <b>Other tags:</b>
     <?php wp_tag_cloud(); ?>
 </p>

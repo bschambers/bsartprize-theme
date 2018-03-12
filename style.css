@@ -37,14 +37,6 @@ html {
     /* box-sizing: border-box; /\* fixes quirky box-sizing behaviour *\/ */
 }
 
-tr {
-    vertical-align: top;
-}
-
-td {
-    padding-right: 2em;
-}
-
 time {
     color: teal;
     font-size: 80%;
@@ -55,6 +47,8 @@ body {
     padding-left: 16%;
     padding-right: 16%;
 }
+
+
 
 /*------------------------ HEADER/MENU BAR -------------------------*/
 
@@ -107,6 +101,11 @@ header.site-header li.page_item::before {
 
 /*---------------------------- CONTENT -----------------------------*/
 
+.page-title {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
 article {
     margin: 1em;
     padding-left: 1em;
@@ -157,7 +156,21 @@ img.attachment-post-thumbnail {
 
 
 
+/*--------------------------- PAGINATION ---------------------------*/
+
+div.single-post-pagination {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+
+
 /*------------------------------ TAGS ------------------------------*/
+
+p.tag-cloud {
+    margin-left: 2em;
+    margin-right: 2em;
+}
 
 .tags-list a:link {
     color: #0D0;
