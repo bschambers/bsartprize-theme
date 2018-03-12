@@ -41,6 +41,7 @@ time {
     color: teal;
     font-size: 80%;
     font-weight: bold;
+    /* line-height: 0.5em; */
 }
 
 body {
@@ -101,35 +102,34 @@ header.site-header li.page_item::before {
 
 /*---------------------------- CONTENT -----------------------------*/
 
-.page-title {
-    padding-left: 1em;
-    padding-right: 1em;
+div.post-title {
+    line-height: 1.5em;
 }
 
-article {
-    margin: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
+div.post-title h2 {
+    margin-top: 0;
+}
+
+div#content {
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 /* home page post summary */
 article.home-page-post {
-    margin-top: 3em;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-article.home-page-post h2 {
-    margin-top: 0;
-}
-
-article a:link {
+div.post-title a:link {
     color: #333;
 }
 
-article a:visited {
+div.post-title a:visited {
     color: black;
 }
 
-article a:hover {
+div.post-title a:hover {
     color: #666;
 }
 
@@ -151,15 +151,6 @@ span.award-title-decoration {
 
 img.attachment-post-thumbnail {
     float: left;
-    margin-right: 2em;
-}
-
-
-
-/*--------------------------- PAGINATION ---------------------------*/
-
-div.single-post-pagination {
-    margin-left: 2em;
     margin-right: 2em;
 }
 
@@ -195,17 +186,14 @@ footer {
 }
 
 footer a:link {
-    text-decoration: none; /* remove underline from links */
     color: #00F;
 }
 
 footer a:visited {
-    text-decoration: none; /* remove underline from links */
     color: #60D;
 }
 
 footer a:hover {
-    text-decoration: none; /* remove underline from links */
     color: #66F;
 }
 

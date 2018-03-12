@@ -66,8 +66,15 @@ function custom_dashboard_help() {
 
 /*
  * Use within the loop only.
+ *
+ * Returns an <h2> containing the page title.
+ *
+ * Special formatting for award-posts:
+ * If category is "award" and post title contains the text "award:", then text
+ * from the beginning of the title up to the end of "award:" is wrapped in a
+ * <span> with class "award-title-decoration".
  */
-function bsap_decorated_title() {
+function bsap_get_decorated_title() {
     $title = get_the_title();
     $category_object = get_the_category();
     if ($category_object) {
@@ -78,17 +85,47 @@ function bsap_decorated_title() {
             $splitpt = $pos + strlen($keyword);
             $part1 = substr($title, 0, $splitpt);
             $part2 = substr($title, $splitpt, strlen($title));
-            $title = "<span class=award-title-decoration>" . $part1 . "</span>" . $part2;
+            $title = "<span class=\"award-title-decoration\">" . $part1 . "</span>" . $part2;
         }
     }
-    echo "<p><h2>" . $title . "</h2></p>";
+    return "<h2>" . $title . "</h2>";
 }
 
 /*
  * Use within the loop only.
+ * 
+ * Inserts the result of bsap_get_decorated_title().
  */
-function bsap_date() {
-    echo "<time>" . get_the_time('F jS, Y') . "</time>";
+function bsap_decorated_title() {
+    echo bsap_get_decorated_title();
+}
+
+/*
+ * Use within the loop only.
+ * 
+ * Returns a <time> element containing the date of the post.
+ */
+function bsap_get_date() {
+    return "<time>" . get_the_time('F jS, Y') . "</time>";
+}
+
+/*
+ * Use within the loop only.
+ *
+ * Inserts a <div> containing nicely formatted DATE and TITLE of post.
+ */
+function bsap_post_title_div() {
+    echo "<div class=\"post-title\">" . bsap_get_date() . bsap_get_decorated_title() . "</div>";
+}
+
+/*
+ * Use within the loop only.
+ *
+ * Inserts a <div> containing nicely formatted date and title of post.
+ * Title is hyperlinked to the post itself.
+ */
+function bsap_post_title_link_div() {
+    echo "<div class=\"post-title\">" . bsap_get_date() . '<a class="index-page-post" href="' . get_the_permalink() . "\">" . bsap_get_decorated_title() . "</a></div>";
 }
 
 ?>

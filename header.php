@@ -24,6 +24,9 @@
 
             <h1 class="site-title">
                 <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                    <?php if (has_site_icon()) : ?>
+                        <img height="50" src="<?php echo get_site_icon_url() ?>" />
+                    <?php endif; ?>
                     <?php bloginfo('name'); ?>
                     <?php /*bloginfo('description');*/ ?>
                 </a>
@@ -40,9 +43,7 @@
                 'sort_column' => 'post_date')); ?>
 
             
-            <!--
-                 SEARCH BOX:
-            -->
+            <!-- SEARCH BOX -->
             <?php
             echo '<span id="nav-menu-search-form">';
             get_search_form(true);
