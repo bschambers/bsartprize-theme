@@ -45,8 +45,18 @@ time {
 }
 
 body {
-    padding-left: 16%;
-    padding-right: 16%;
+    margin: auto; /* centered - margin is evely distributed */
+    width: 66%;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+/* make sure that images fit to screen on narrow displays */
+div.site-content img {
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -57,33 +67,32 @@ header {
     border-bottom: 1px solid #333;
     margin: 1em;
     padding: 1em;
-    /* padding-left: 1em; */
-    /* padding-right: 1em; */
-    /* padding-bottom: 1em; */
+}
+
+header a {
+    text-decoration: none; /* remove underline from links */
 }
 
 header a:link {
-    text-decoration: none; /* remove underline from links */
-    color: #333;
+    color: black;
 }
 
 header a:visited {
-    text-decoration: none; /* remove underline from links */
     color: black;
 }
 
 header a:hover {
-    text-decoration: none; /* remove underline from links */
-    color: #666;
+    color: #00D080;
 }
 
-header h1.site-title {
-    display: inline;
-    size: 2rem;
+header span.site-title {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 header li.page_item {
-    display: inline;
+    display: inline-block;
 }
 
 span#nav-menu-search-form {
@@ -94,10 +103,6 @@ span#nav-menu-search-form {
 /* insert vertical bar before each static page link */
 header.site-header li.page_item::before {
     content: " | ";
-}
-
-.clearfix {
-    overflow: auto;
 }
 
 /*---------------------------- CONTENT -----------------------------*/
@@ -130,7 +135,7 @@ div.post-title a:visited {
 }
 
 div.post-title a:hover {
-    color: #666;
+    color: #00D080;
 }
 
 a.more-link:link {
@@ -177,6 +182,14 @@ p.tag-cloud {
 
 
 
+/*------------------------- IMAGE CAPTION --------------------------*/
+
+div.wp-caption {
+    font-size: 80%;
+}
+
+
+
 /*----------------------------- FOOTER -----------------------------*/
 
 footer {
@@ -213,8 +226,7 @@ footer span.footer-item {
 @media screen and (max-width: 1200px) {
     
     body {
-        padding-left: 0%;
-        padding-right: 0%;
+        width: 100%
     }
 }
 
@@ -226,6 +238,10 @@ footer span.footer-item {
  */
 @media screen and (max-width: 800px) {
 
+    body {
+        width: 100%
+    }
+    
     span#nav-menu-search-form {
         float: none;
     }
@@ -233,4 +249,9 @@ footer span.footer-item {
     img.attachment-post-thumbnail {
         float: none;
     }
+    
+    footer span.footer-item {
+        font-size: 75%;
+    }
+
 }
