@@ -1,0 +1,3 @@
+* BSARTPRIZE theme for Wordpress
+
+A Wordpress theme created for the B. S. Art Prize website.

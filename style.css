@@ -2,7 +2,7 @@
 Theme Name: bsartprize
 Theme URI:
 Author: B. S. Chambers
-Author URI: http://bschambers.info
+Author URI: http://www.bschambers.info
 Description: A fairly clean and simple news feed theme with a few special features.
 Home page shows a list of post summaries which link to the posts.
 Special styling applied to posts with the "award" category.
@@ -22,19 +22,13 @@ Text Domain: bsartprize
     font-weight: normal;
 }
 
-/*------------------------------------------------------------------*/
 
-/* GENERAL MISC */
+
+/*-------------------------- GENERAL MISC --------------------------*/
 
 html {
-    color: #333;
-    /* font-family: arial, sans-serif; */
+    color: #555;
     font-family: "urw-gothic", arial, sans-serif;
-    /* font-size: 100%; */
-    /* background: #779999; */
-    /* -webkit-box-sizing: border-box; /\* for old browser support *\/ */
-    /* -moz-box-sizing: border-box; /\* for old browser support *\/ */
-    /* box-sizing: border-box; /\* fixes quirky box-sizing behaviour *\/ */
 }
 
 time {
@@ -63,35 +57,44 @@ div.site-content img {
 
 /*------------------------ HEADER/MENU BAR -------------------------*/
 
-header {
+header.site-header {
     border-bottom: 1px solid #333;
     margin: 1em;
     padding: 1em;
 }
 
-header a {
-    text-decoration: none; /* remove underline from links */
+header.site-header img.menu-bar-icon {
+    height: 3rem;
 }
 
-header a:link {
-    color: black;
-}
-
-header a:visited {
-    color: black;
-}
-
-header a:hover {
-    color: #00D080;
-}
-
-header span.site-title {
+header.site-header span.site-title {
     display: inline-block;
     font-size: 2rem;
     font-weight: bold;
 }
 
-header li.page_item {
+/* insert vertical bar before each static page link */
+header.site-header li.page_item::before {
+    content: " | ";
+}
+
+header.site-header a {
+    text-decoration: none; /* remove underline from links */
+}
+
+header.site-header a:link {
+    color: #555;
+}
+
+header.site-header a:visited {
+    color: #555;
+}
+
+header.site-header a:hover {
+    color: #00D080;
+}
+
+header.site-header li.page_item {
     display: inline-block;
 }
 
@@ -100,10 +103,7 @@ span#nav-menu-search-form {
     margin-top: 1em;
 }
 
-/* insert vertical bar before each static page link */
-header.site-header li.page_item::before {
-    content: " | ";
-}
+
 
 /*---------------------------- CONTENT -----------------------------*/
 
@@ -127,11 +127,11 @@ article.home-page-post {
 }
 
 div.post-title a:link {
-    color: #333;
+    color: #555;
 }
 
 div.post-title a:visited {
-    color: black;
+    color: #555;
 }
 
 div.post-title a:hover {
