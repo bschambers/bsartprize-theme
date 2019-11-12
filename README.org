@@ -1,3 +1,7 @@
 * BSARTPRIZE theme for Wordpress
 
 A Wordpress theme created for the B. S. Art Prize website.
+
+A fairly simple blog theme with a few special features.
+
+Special formatting applied to the title of award-posts.

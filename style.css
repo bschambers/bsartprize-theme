@@ -192,10 +192,11 @@ div.wp-caption {
 
 /*----------------------------- FOOTER -----------------------------*/
 
-footer {
+footer.site-footer {
     border-top: 1px solid #333;
     margin: 1em;
     padding: 1em;
+    padding-bottom: 3em;
 }
 
 footer a:link {
@@ -210,8 +211,16 @@ footer a:hover {
     color: #66F;
 }
 
-footer span.footer-item {
-    display: inline-block;
+footer div.footer-item {
+    display: block;
+}
+
+footer div.footer-item-left {
+    float: left;
+}
+
+footer div.footer-item-right {
+    float: right;
 }
 
 
@@ -219,9 +228,7 @@ footer span.footer-item {
 /*---------------- MEDIA RULES (for narrow display) ----------------*/
 
 /*
- * Fairly narrow screen:
- *
- * - get rid of horizontal padding on body
+ * Get rid of horizontal padding on body.
  */
 @media screen and (max-width: 1200px) {
     
@@ -231,10 +238,8 @@ footer span.footer-item {
 }
 
 /*
- * Very narrow screen:
- *
- * - restructure title bar
- * - place text below featured image on home page
+ * Restructure title bar.
+ * Place text below featured image on home page.
  */
 @media screen and (max-width: 800px) {
 
@@ -242,6 +247,10 @@ footer span.footer-item {
         width: 100%
     }
     
+    header.site-header span.site-title {
+        font-size: 1.5rem;
+    }
+
     span#nav-menu-search-form {
         float: none;
     }
@@ -250,8 +259,15 @@ footer span.footer-item {
         float: none;
     }
     
-    footer span.footer-item {
+    footer div.footer-item {
         font-size: 75%;
     }
 
+    footer div.footer-item-left {
+        float: none;
+    }
+
+    footer div.footer-item-right {
+        float: none;
+    }
 }

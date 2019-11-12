@@ -93,7 +93,7 @@ function bsap_get_decorated_title() {
 
 /*
  * Use within the loop only.
- * 
+ *
  * Inserts the result of bsap_get_decorated_title().
  */
 function bsap_decorated_title() {
@@ -102,7 +102,7 @@ function bsap_decorated_title() {
 
 /*
  * Use within the loop only.
- * 
+ *
  * Returns a <time> element containing the date of the post.
  */
 function bsap_get_date() {
@@ -128,4 +128,80 @@ function bsap_post_title_link_div() {
     echo "<div class=\"post-title\">" . bsap_get_date() . '<a class="index-page-post" href="' . get_the_permalink() . "\">" . bsap_get_decorated_title() . "</a></div>";
 }
 
+
+
+/*------------------- CUSTOM ADMINISTRATION MENU ITEMS  -------------------*/
+
+// database option names
+$opt_meta_description = 'bsap_meta_description';
+
+// register a new admin menu
+add_action('admin_menu', 'bsap_menu');
+
+// the function which creates the new admin menu
+function bsap_menu() {
+    // add_options_page($page_title, $menu_title, $capability, $menu_slug, $function)
+    add_options_page('bsartprize theme', 'BSArtPrize theme', 'manage_options', 'bsap-settings', 'bsap_settings');
+}
+
+// builds the custom menu
+function bsap_settings() {
+    if (!current_user_can( 'manage_options')) {
+	wp_die( __('You do not have sufficient permissions to access this page.'));
+    }
+
+    // make global variables available
+    global $opt_meta_description;
+
+    // field names
+    $field_meta_description = "bsap-meta-description";
+
+    //
+    $hidden_field = 'bsp_submit_hidden';
+
+    // read in existing values from the database
+    $meta_description = get_option($opt_meta_description);
+
+    // see if the user has posted us some information
+    // if they did, this hidden field will be set to 'Y'
+    if (isset($_POST[$hidden_field]) && $_POST[$hidden_field] == 'Y') {
+        // read the posted values
+        $meta_description = $_POST[$field_meta_description];
+        // save the posted values in the database...
+        // ... if the option doesn't exist, update_option will create it automatically
+        update_option($opt_meta_description, $meta_description);
+
+        // put a 'settings saved' message on screen
+        // NOTE: _e() is a translation function... see documentation...
+?>
+    <div class='updated'><p><strong><?php _e('Settings saved.', 'bsportfolio-settings'); ?></strong></p>
+        <p>meta-description = <?php echo $meta_description; ?></p>
+    </div>
+<?php
+}
+
+// display settings editing form
+echo '<div class="wrap">';
+// header
+echo "<h2>" . __('BSArtPrize Theme Settings', 'bsap-settings') . "</h2>";
+// settings form
+?>
+
+<form name="bsportfolio-form" method="post" action="">
+    <input type="hidden" name="<?php echo $hidden_field; ?>" value="Y"/>
+
+
+
+    <p><h2>Meta 'description' tag</h2></p>
+
+    <p><input type="text" name="<?php echo $field_meta_description; ?>" value="<?php echo $meta_description; ?>"/></p>
+
+    <p class="submit">
+        <input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />
+    </p>
+
+</form>
+ </div>
+<?php
+}
 ?>
